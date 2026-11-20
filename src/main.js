@@ -334,7 +334,7 @@ function setupRoute(mm) {
         .to(previous.word, { yPercent: -60, autoAlpha: 0 }, label)
         .to(previous.text, { autoAlpha: 0, y: -24, duration: 0.5 }, label)
         .to(previous.inner, { scale: 0.86 }, label)
-        .to(current.inner, { clipPath: 'circle(75% at 50% 50%)' }, label)
+        .to(current.inner, { clipPath: 'circle(50% at 50% 50%)' }, label) // 50% = il cerchio dell'oblò
         .to(current.word, { yPercent: 0, autoAlpha: 1 }, `${label}+=0.15`)
         .to(current.text, { autoAlpha: 1, y: 0, duration: 0.5 }, `${label}+=0.5`)
         .to({}, { duration: 0.4 });
