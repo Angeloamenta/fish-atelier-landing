@@ -1,0 +1,8 @@
+Gambero ad acquerello (assets/img/decori/gambero-acquerello.webp)
+
+1. python3 gambero.py arco          -> arco-pig.svg (pigmento) e arco-luce.svg (luci)
+2. esporta i due SVG in PNG trasparente a 2x (es. Chrome: apri il file e salva lo screenshot, o rsvg-convert -z 2)
+3. python3 acquerello.py arco-pig.png arco-luce.png gambero-acquerello.webp
+4. ridimensiona a 1400 px di larghezza e copia in assets/img/decori/
+
+Pose disponibili in gambero.py: curvo, teso, arco. Servono numpy, scipy, pillow.
