@@ -22,6 +22,7 @@ gsap.registerPlugin(ScrollTrigger, SplitText);
 
 const SELECTORS = {
   header: '[data-header]',
+  nav: '.main-nav',
   progress: '[data-progress]',
   darkSections: '[data-tema="scuro"]',
   hero: '[data-hero]',
@@ -69,7 +70,39 @@ function setupSmoothScroll() {
       const target = document.querySelector(id);
       if (!target) return;
       event.preventDefault();
-      lenis.scrollTo(target, { offset: id === '#top' ? 0 : -8, duration: 1.4 });
+      // posizione assoluta in px: con un elemento Lenis aggiungerebbe lo scroll-padding-top dell'html.
+      // Si arriva con la sezione in cima: l'header copre il suo margine superiore, del suo stesso colore,
+      // invece di lasciarci sotto l'ultima striscia della sezione precedente.
+      const destination = window.scrollY + target.getBoundingClientRect().top;
+      lenis.scrollTo(destination, { duration: 1.4 });
+      history.replaceState(null, '', id);
+    });
+  });
+}
+
+/* ==========================================================================
+   NAVIGAZIONE — la voce della sezione in vista resta segnata
+   ========================================================================== */
+function setupNavCurrent() {
+  const links = gsap.utils.toArray(`${SELECTORS.nav} a[href^="#"]`);
+  const setCurrent = (activeLink) => {
+    links.forEach((link) => {
+      if (link === activeLink) link.setAttribute('aria-current', 'location');
+      else link.removeAttribute('aria-current');
+    });
+  };
+
+  links.forEach((link) => {
+    const section = document.querySelector(link.getAttribute('href'));
+    if (!section) return;
+    ScrollTrigger.create({
+      trigger: section,
+      start: 'top center',
+      end: 'bottom center',
+      onToggle: (self) => {
+        if (self.isActive) setCurrent(link);
+        else if (link.hasAttribute('aria-current')) setCurrent(null);
+      },
     });
   });
 }
@@ -597,6 +630,7 @@ function init() {
   setupSplitTitles();
   setupBand();
   setupForm();
+  setupNavCurrent();
   // dopo i pin della hero e del palco: così i trigger del tema tengono conto dello spazio aggiunto
   setupHeaderTheme();
   setupProgressBar();

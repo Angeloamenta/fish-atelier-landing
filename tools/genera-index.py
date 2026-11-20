@@ -139,12 +139,14 @@ page = f'''<!doctype html>
   </a>
   <nav class="main-nav" aria-label="Sezioni">
     <ul>
+      <li><a href="#materia">La materia</a></li>
       <li><a href="#rotta">Dal pack al piatto</a></li>
+      <li><a href="#video">Video</a></li>
       <li><a href="#gamma">La gamma</a></li>
-      <li><a href="#buyer">Per i buyer</a></li>
+      <li><a href="#prezzo">Il prezzo</a></li>
     </ul>
   </nav>
-  <a class="btn btn--pieno" href="#buyer">Prenota un assaggio</a>
+  <a class="btn btn--pieno" href="#buyer" aria-label="Prenota un assaggio"><span>Prenota<span class="cta-coda"> un assaggio</span></span></a>
 </header>
 
 <!-- avanzamento verticale: quanto manca alla fine della pagina -->
@@ -183,7 +185,7 @@ page = f'''<!doctype html>
   </section>
 
   <!-- ============ LA MATERIA PRIMA: le due specie disegnate ad acquerello, come tavole naturalistiche ============ -->
-  <section class="materia" aria-labelledby="materia-title" data-materia>
+  <section class="materia" id="materia" aria-labelledby="materia-title" data-materia>
     <div class="wrap sezione-testa materia-testa">
       <h2 class="h2" id="materia-title">Da dove parte <em>il prezzo</em></h2>
       <p>Due materie prime che reggono metà della gamma. Per ognuna: come si cucina e in quali referenze la trovate.</p>
@@ -275,7 +277,7 @@ page = f'''<!doctype html>
   </section>
 
   <!-- ============ VIDEO ============ -->
-  <section class="video" aria-labelledby="video-title">
+  <section class="video" id="video" aria-labelledby="video-title">
     <div class="wrap sezione-testa">
       <h2 class="h2" id="video-title">Dal pack al piatto, <em>in un minuto</em></h2>
       <p>Il video della preparazione: lo stesso che proietteremo allo stand. Lorem ipsum dolor sit amet.</p>
@@ -331,7 +333,7 @@ page = f'''<!doctype html>
   </dialog>
 
   <!-- ============ PERCHÉ PREMIUM: impaginato come il menù approvato ============ -->
-  <section class="valore" aria-labelledby="valore-title">
+  <section class="valore" id="prezzo" aria-labelledby="valore-title">
     {decoro("tentacolo-ricciolo", "valore-polpo valore-polpo--1", 390, 900, " data-deriva")}
     {decoro("tentacolo-lungo", "valore-polpo valore-polpo--2", 341, 900, " data-deriva")}
     {decoro("polpo-esse", "valore-polpo valore-polpo--3", 563, 837, " data-deriva")}
