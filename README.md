@@ -1,7 +1,7 @@
 # Landing Fish Atelier — v5 "Carta"
 
 ## Aprire la pagina
-Doppio clic su `index.html`. In locale funziona tutto tranne l'invio del form, che va solo su Netlify: per pubblicarla usa la cartella `fish-atelier-v5-netlify`.
+Doppio clic su `index.html`. In locale funziona tutto tranne l'invio del form, che funziona solo online. Netlify pubblica il sito dal repo GitHub a ogni push (`netlify.toml` copia solo `index.html`, `assets/` e `_headers`).
 
 ## Struttura
 ```
@@ -31,4 +31,4 @@ python3 tools/genera-index.py  # rigenera index.html dalle referenze
 - **Hero:** `setupHeroScroll()`; durata del blocco `end: '+=160%'`.
 - **Palco:** `setupRoute()`; durata `window.innerHeight * 2.6`.
 - **Contatori:** attributo `data-conta` (e `data-conta-da` per partire da un altro numero).
-- **Form:** Netlify Forms, nome `assaggi`.
+- **Form:** Netlify Forms, nome `assaggi`. Campi: nome, azienda, email (obbligatori), messaggio (facoltativo), consenso privacy.

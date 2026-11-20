@@ -376,15 +376,6 @@ page = f'''<!doctype html>
         <!-- Netlify Forms: il nome del form e la trappola per i bot -->
         <input type="hidden" name="form-name" value="assaggi">
         <p class="campo-trappola" aria-hidden="true"><label>Non compilare questo campo <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <fieldset class="campo">
-          <legend>Cosa vi interessa</legend>
-          <div class="scelte">
-            <label class="scelta"><input type="radio" name="richiesta" value="assaggio" checked><span>Assaggio allo stand</span></label>
-            <label class="scelta"><input type="radio" name="richiesta" value="showcooking"><span>Showcooking</span></label>
-            <label class="scelta"><input type="radio" name="richiesta" value="incontro"><span>Incontro commerciale</span></label>
-            <label class="scelta"><input type="radio" name="richiesta" value="campioni"><span>Listino e campioni</span></label>
-          </div>
-        </fieldset>
         <div class="modulo-griglia">
           <div class="campo">
             <label for="f-nome">Nome e cognome</label>
@@ -392,50 +383,29 @@ page = f'''<!doctype html>
             <p class="campo-errore" id="e-nome">Inserisci nome e cognome.</p>
           </div>
           <div class="campo">
-            <label for="f-insegna">Insegna o azienda</label>
-            <input id="f-insegna" name="insegna" type="text" autocomplete="organization" required aria-describedby="e-insegna">
-            <p class="campo-errore" id="e-insegna">Inserisci l'insegna o l'azienda.</p>
-          </div>
-          <div class="campo">
-            <label for="f-email">Email</label>
-            <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
-            <p class="campo-errore" id="e-email">Inserisci un'email valida, per esempio nome@azienda.it.</p>
-          </div>
-          <div class="campo">
-            <label for="f-tel">Telefono <span class="opz">facoltativo</span></label>
-            <input id="f-tel" name="telefono" type="tel" autocomplete="tel">
-          </div>
-          <div class="campo">
-            <label for="f-ruolo">Ruolo</label>
-            <select id="f-ruolo" name="ruolo">
-              <option>Buyer</option>
-              <option>Category manager</option>
-              <option>Direzione acquisti</option>
-              <option>Altro</option>
-            </select>
-          </div>
-          <div class="campo">
-            <label for="f-giorno">Giorno preferito <span class="opz">facoltativo</span></label>
-            <select id="f-giorno" name="giorno">
-              <option value="">Indifferente</option>
-              <option>Giorno 1</option>
-              <option>Giorno 2</option>
-            </select>
+            <label for="f-insegna">Azienda</label>
+            <input id="f-insegna" name="azienda" type="text" autocomplete="organization" required aria-describedby="e-insegna">
+            <p class="campo-errore" id="e-insegna">Inserisci il nome dell'azienda.</p>
           </div>
         </div>
         <div class="campo">
+          <label for="f-email">Email</label>
+          <input id="f-email" name="email" type="email" autocomplete="email" required aria-describedby="e-email">
+          <p class="campo-errore" id="e-email">Inserisci un'email valida, per esempio nome@azienda.it.</p>
+        </div>
+        <div class="campo">
           <label for="f-msg">Messaggio <span class="opz">facoltativo</span></label>
-          <textarea id="f-msg" name="messaggio" rows="3"></textarea>
+          <textarea id="f-msg" name="messaggio" rows="3" placeholder="Assaggio, showcooking o incontro: diteci cosa vi interessa"></textarea>
         </div>
         <div class="modulo-piede">
           <div class="campo">
             <label class="spunta" for="f-privacy"><input type="checkbox" name="privacy" id="f-privacy" required aria-describedby="e-privacy"><span>Ho letto l'<a href="#">informativa privacy</a></span></label>
             <p class="campo-errore" id="e-privacy">Per inviare la richiesta serve il consenso all'informativa.</p>
           </div>
-          <button class="btn btn--chiaro" type="submit">Invia la prenotazione</button>
+          <button class="btn btn--chiaro" type="submit">Invia la richiesta</button>
         </div>
         <p class="modulo-esito modulo-esito--errore" role="alert" hidden>Invio non riuscito. Riprovate tra poco o scriveteci a commerciale@example.com.</p>
-        <p class="modulo-esito" role="status" aria-live="polite" hidden>Prenotazione inviata. Vi confermiamo giorno e orario entro 00 giorni lavorativi.</p>
+        <p class="modulo-esito" role="status" aria-live="polite" hidden>Richiesta inviata. Vi ricontattiamo entro 00 giorni lavorativi.</p>
       </form>
     </div>
   </section>
