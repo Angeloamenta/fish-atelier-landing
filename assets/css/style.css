@@ -43,7 +43,7 @@
   --fs-34: 2.125rem;       /* titoli di card e tappe */
   --fs-h2: clamp(2.75rem, 5.6vw, 5rem);
   --fs-dato: clamp(3.5rem, 7vw, 6.25rem);
-  --fs-parola: clamp(3.25rem, 7.5vw, 7rem);
+  --fs-parola: clamp(2.25rem, 4vw, 3.5rem); /* le tre portate: sotto il titolo di sezione (--fs-h2), sopra il testo */
   --fs-hero: clamp(4rem, 10.5vw, 11.5rem);
   --fs-gigante: clamp(6rem, 22vw, 24rem);
 
